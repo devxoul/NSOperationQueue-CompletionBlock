@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		037493ED1B5FE92300672D74 /* NSOperationQueue+CompletionBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 037493EC1B5FE92300672D74 /* NSOperationQueue+CompletionBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		037493F31B5FE92300672D74 /* NSOperationQueue+CompletionBlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037493E71B5FE92300672D74 /* NSOperationQueue+CompletionBlock.framework */; };
+		037493F31B5FE92300672D74 /* NSOperationQueue_CompletionBlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037493E71B5FE92300672D74 /* NSOperationQueue_CompletionBlock.framework */; };
 		037493FA1B5FE92300672D74 /* NSOperationQueue_CompletionBlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 037493F91B5FE92300672D74 /* NSOperationQueue_CompletionBlockTests.m */; };
+		037494041B5FE9CB00672D74 /* NSOperationQueue+CompletionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 037494031B5FE9CB00672D74 /* NSOperationQueue+CompletionBlock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +24,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		037493E71B5FE92300672D74 /* NSOperationQueue+CompletionBlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "NSOperationQueue+CompletionBlock.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		037493E71B5FE92300672D74 /* NSOperationQueue_CompletionBlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NSOperationQueue_CompletionBlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		037493EB1B5FE92300672D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037493EC1B5FE92300672D74 /* NSOperationQueue+CompletionBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+CompletionBlock.h"; sourceTree = "<group>"; };
 		037493F21B5FE92300672D74 /* NSOperationQueue+CompletionBlockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NSOperationQueue+CompletionBlockTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		037493F81B5FE92300672D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037493F91B5FE92300672D74 /* NSOperationQueue_CompletionBlockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOperationQueue_CompletionBlockTests.m; sourceTree = "<group>"; };
+		037494031B5FE9CB00672D74 /* NSOperationQueue+CompletionBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+CompletionBlock.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				037493F31B5FE92300672D74 /* NSOperationQueue+CompletionBlock.framework in Frameworks */,
+				037493F31B5FE92300672D74 /* NSOperationQueue_CompletionBlock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +64,7 @@
 		037493E81B5FE92300672D74 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				037493E71B5FE92300672D74 /* NSOperationQueue+CompletionBlock.framework */,
+				037493E71B5FE92300672D74 /* NSOperationQueue_CompletionBlock.framework */,
 				037493F21B5FE92300672D74 /* NSOperationQueue+CompletionBlockTests.xctest */,
 			);
 			name = Products;
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				037493EC1B5FE92300672D74 /* NSOperationQueue+CompletionBlock.h */,
+				037494031B5FE9CB00672D74 /* NSOperationQueue+CompletionBlock.m */,
 				037493EA1B5FE92300672D74 /* Supporting Files */,
 			);
 			path = "NSOperationQueue+CompletionBlock";
@@ -131,7 +134,7 @@
 			);
 			name = "NSOperationQueue+CompletionBlock";
 			productName = "NSOperationQueue+CompletionBlock";
-			productReference = 037493E71B5FE92300672D74 /* NSOperationQueue+CompletionBlock.framework */;
+			productReference = 037493E71B5FE92300672D74 /* NSOperationQueue_CompletionBlock.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		037493F11B5FE92300672D74 /* NSOperationQueue+CompletionBlockTests */ = {
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				037494041B5FE9CB00672D74 /* NSOperationQueue+CompletionBlock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +333,7 @@
 				INFOPLIST_FILE = "NSOperationQueue+CompletionBlock/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -344,7 +348,7 @@
 				INFOPLIST_FILE = "NSOperationQueue+CompletionBlock/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
