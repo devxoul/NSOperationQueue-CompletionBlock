@@ -42,7 +42,7 @@ queue.completionBlock = ^{
 
 ```
 I am an operation.
-I'm dont!
+I'm done!
 ```
 
 
