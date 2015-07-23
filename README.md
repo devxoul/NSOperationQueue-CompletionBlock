@@ -4,7 +4,7 @@ NSOperationQueue+CompletionBlock
 [![Build Status](https://travis-ci.org/devxoul/NSOperationQueue-CompletionBlock.svg?branch=master)](https://travis-ci.org/devxoul/NSOperationQueue-CompletionBlock)
 [![CocoaPods](http://img.shields.io/cocoapods/v/NSOperationQueue+CompletionBlock.svg?style=flat)](https://cocoapods.org/pods/NSOperationQueue+CompletionBlock)
 
-A missing completionBlock for NSOperationQueue.
+Completion block for NSOperationQueue.
 
 
 At a Glance

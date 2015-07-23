@@ -29,7 +29,7 @@
 
 @implementation NSOperationQueue_CompletionBlockTests
 
-- (void)testCompletionBlock {
+- (void)testCompletionBlockExecution {
     XCTestExpectation *expectation = [self expectationWithDescription:@"Execute completion block"];
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     queue.completionBlock = ^{
@@ -37,6 +37,28 @@
     };
     [queue addOperation:[[NSOperation alloc] init]];
     [self waitForExpectationsWithTimeout:0.5 handler:nil];
+}
+
+- (void)testCompletionBlockExecutionAfterOperation {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Execute completion block"];
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    __block NSInteger count;
+    queue.completionBlock = ^{
+        NSLog(@"B");
+        XCTAssertEqual(count, 2);
+        [expectation fulfill];
+    };
+    [queue addOperationWithBlock:^{
+        for (NSInteger i = 0; i < 10000000; i++) {}
+        NSLog(@"A");
+        count += 1;
+    }];
+    [queue addOperationWithBlock:^{
+        for (NSInteger i = 0; i < 10000000; i++) {}
+        NSLog(@"A");
+        count += 1;
+    }];
+    [self waitForExpectationsWithTimeout:1 handler:nil];
 }
 
 @end

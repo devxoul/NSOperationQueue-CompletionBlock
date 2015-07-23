@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "NSOperationQueue+CompletionBlock"
   s.version      = "1.0.0"
-  s.summary      = "A missing completionBlock for NSOperationQueue."
+  s.summary      = "Completion block for NSOperationQueue."
   s.homepage     = "https://github.com/devxoul/NSOperationQueue-CompletionBlock"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "devxoul" => "devxoul@gmail.com" }
